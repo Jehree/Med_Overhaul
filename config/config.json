@@ -1,5 +1,5 @@
 {
-    "healthrate_multiplier": 1,
+    "healthrate_multiplier": 100,
     "overhaul_medkits": true,
     "overhaul_bleed_correction": true,
     "overhaul_splints": true,
@@ -7,7 +7,7 @@
     "overhaul_drugs": true,
     "overhaul_stims": true,
 
-    "disable_softskills": true,
+    "disable_softskills": false,
     "softskills_to_disable": [
         "Health",
         "Immunity",

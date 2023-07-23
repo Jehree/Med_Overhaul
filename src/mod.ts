@@ -135,13 +135,19 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
             buffsConfig.STIMS
         ]
 
-        for (const i in newBuffs){
+        for (const buffCat of newBuffs){
 
-            const thisBuffCat = newBuffs[i]
+            for (const buffKey in buffCat){
 
-            for (const buffKey in thisBuffCat){
+                const thisBuff = buffCat[buffKey]
 
-                dbGlobals.config.Health.Effects.Stimulator.Buffs[buffKey] = thisBuffCat[buffKey]
+                for (const effect in thisBuff){
+                    if (thisBuff[effect].BuffType === "HealthRate"){
+                        thisBuff[effect].Value *= config.healthrate_multiplier
+                    }
+                }
+
+                dbGlobals.config.Health.Effects.Stimulator.Buffs[buffKey] = thisBuff
             }
         }
     }
@@ -197,7 +203,7 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
         this.fileConstructor(this.modPath + "/config/generated_json.json", jsonData)
 
     }
-    
+
     fileConstructor(filePath:string, fileData:any): void{
 
         const fileDataJson = JSON.stringify(fileData, null, 4)
