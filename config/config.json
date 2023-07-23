@@ -1,0 +1,21 @@
+{
+    "healthrate_multiplier": 1,
+    "overhaul_medkits": true,
+    "overhaul_bleed_correction": true,
+    "overhaul_splints": true,
+    "overhaul_surgery_kits": true,
+    "overhaul_drugs": true,
+    "overhaul_stims": true,
+
+    "disable_softskills": true,
+    "softskills_to_disable": [
+        "Health",
+        "Immunity",
+        "Metabolism",
+        "Vitality",
+        "StressResistance",
+        "FieldMedicine",
+        "FirstAid",
+        "Surgery"
+    ]
+}

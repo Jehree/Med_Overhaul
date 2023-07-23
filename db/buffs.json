@@ -1,0 +1,640 @@
+{
+
+    "MEDKITS":{
+        "buffs_ai-2_jehree": [
+            {
+                "BuffType": "Pain",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 65,
+                "Value": 1,
+                "AbsoluteValue": false,
+                "SkillName": "",
+                "AppliesTo": []
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 5,
+                "Duration": 60,
+                "Value": 1.35,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 60,
+                "Duration": 15,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            }
+        ],
+        "buffs_car_jehree": [        
+            {
+                "BuffType": "Pain",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 85,
+                "Value": 1,
+                "AbsoluteValue": false,
+                "SkillName": "",
+                "AppliesTo": []
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 5,
+                "Duration": 80,
+                "Value": 1,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 80,
+                "Duration": 15,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            }
+
+        ],
+        "buffs_salewa_jehree": [
+            {
+                "BuffType": "Pain",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 60,
+                "Value": 2,
+                "AbsoluteValue": false,
+                "SkillName": "",
+                "AppliesTo": []
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 4,
+                "Duration": 27,
+                "Value": 6,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 26,
+                "Duration": 15,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            }
+
+        ],
+        "buffs_ifak_jehree": [
+            {
+                "BuffType": "Pain",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 60,
+                "Value": 2,
+                "AbsoluteValue": false,
+                "SkillName": "",
+                "AppliesTo": []
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 4,
+                "Duration": 16,
+                "Value": 8,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 15,
+                "Duration": 15,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            }
+        ],
+        "buffs_afak_jehree": [
+            {
+                "BuffType": "Pain",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 60,
+                "Value": 2,
+                "AbsoluteValue": false,
+                "SkillName": "",
+                "AppliesTo": []
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 4,
+                "Duration": 32,
+                "Value": 4,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 31,
+                "Duration": 15,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            }
+        ],
+        "buffs_grizzly_jehree": [
+            {
+                "BuffType": "Pain",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 106,
+                "Value": 2,
+                "AbsoluteValue": false,
+                "SkillName": "",
+                "AppliesTo": []
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 6,
+                "Duration": 100,
+                "Value": 5,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 106,
+                "Duration": 15,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            }
+        ]
+    },
+
+    "INJURY_CORRECTION":{
+
+        "buffs_calok-b_hemo_jehree":[
+            {
+                "BuffType": "Pain",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 6,
+                "Value": 2,
+                "AbsoluteValue": false,
+                "SkillName": "",
+                "AppliesTo": []
+            }
+        ],
+
+        "buffs_splint_tourniquet_jehree":[
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 10,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            }
+        ],
+
+        "buffs_surgery_jehree":[
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 5,
+                "Value": 8,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 120,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "Pain",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 120,
+                "Value": 6,
+                "AbsoluteValue": false,
+                "SkillName": "",
+                "AppliesTo": []
+            },
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 0,
+                "Duration": 20,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            },
+
+            {
+                "BuffType": "LightBleeding",
+                "Chance": 0.75,
+                "Delay": 20,
+                "Duration": 0,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": "",
+                "AppliesTo": []
+            }
+        ]
+    },
+
+    "DRUGS":{
+        "buffs_ibuprofen_jehree":[
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 385,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            }
+        ],
+        "buffs_analgin_jehree":[
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 230,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            }
+        ],
+        "buffs_augmentin_jehree":[
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 205,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            }
+        ],
+        "buffs_golden_star_jehree":[
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 223,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            }
+        ],
+        "buffs_vaseline_jehree":[
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 220,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            }
+        ]
+    },
+
+    "STIMS":{
+        "buffs_morphine_jehree":[
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 300,
+                "Value": 10,
+                "AbsoluteValue": true,
+                "SkillName": "Strength"
+            },
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 300,
+                "Value": 30,
+                "AbsoluteValue": true,
+                "SkillName": "StressResistance"
+            },
+
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 297,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            },
+
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 302,
+                "Duration": 180,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 302,
+                "Duration": 180,
+                "Value": -10,
+                "AbsoluteValue": true,
+                "SkillName": "Strength"
+            },
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 302,
+                "Duration": 180,
+                "Value": -20,
+                "AbsoluteValue": true,
+                "SkillName": "StressResistance"
+            }
+        ],
+
+        "buffs_adrenaline_jehree": [
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 60,
+                "Value": 60,
+                "AbsoluteValue": true,
+                "SkillName": "Endurance"
+            },
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 60,
+                "Value": 60,
+                "AbsoluteValue": true,
+                "SkillName": "Strength"
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 15,
+                "Value": 4,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 57,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            },
+
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 62,
+                "Duration": 120,
+                "Value": -20,
+                "AbsoluteValue": true,
+                "SkillName": "Strength"
+            },
+            {
+                "BuffType": "EnergyRate",
+                "Chance": 1,
+                "Delay": 62,
+                "Duration": 100,
+                "Value": -0.2,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HydrationRate",
+                "Chance": 1,
+                "Delay": 62,
+                "Duration": 100,
+                "Value": -0.4,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            }
+        ],
+
+        "buffs_mule_jehree": [
+            {
+                "BuffType": "WeightLimit",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 900,
+                "Value": 0.5,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 900,
+                "Value": -0.2,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 897,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            },
+
+            {
+                "BuffType": "WeightLimit",
+                "Chance": 1,
+                "Delay": 897,
+                "Duration": 300,
+                "Value": -0.2,
+                "AbsoluteValue": false,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 897,
+                "Duration": 300,
+                "Value": -10,
+                "AbsoluteValue": true,
+                "SkillName": "Strength"
+            }
+        ],
+
+        "buffs_propital_jehree": [
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 200,
+                "Value": 2,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 200,
+                "Value": 10,
+                "AbsoluteValue": true,
+                "SkillName": "Strength"
+            },
+
+
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 197,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 202,
+                "Duration": 100,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "EnergyRate",
+                "Chance": 1,
+                "Delay": 202,
+                "Duration": 100,
+                "Value": -0.08,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 202,
+                "Duration": 100,
+                "Value": -1,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 202,
+                "Duration": 200,
+                "Value": -10,
+                "AbsoluteValue": true,
+                "SkillName": "Strength"
+            }
+        ],
+
+        "buffs_etg_jehree": [
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 60,
+                "Value": 7,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 2,
+                "Duration": 60,
+                "Value": 30,
+                "AbsoluteValue": true,
+                "SkillName": "Strength"
+            },
+
+            {
+                "BuffType": "QuantumTunnelling",
+                "Chance": 1,
+                "Delay": 57,
+                "Duration": 5,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+
+            {
+                "BuffType": "HandsTremor",
+                "Chance": 1,
+                "Delay": 62,
+                "Duration": 120,
+                "Value": 0,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "EnergyRate",
+                "Chance": 1,
+                "Delay": 62,
+                "Duration": 120,
+                "Value": -0.25,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "HealthRate",
+                "Chance": 1,
+                "Delay": 62,
+                "Duration": 120,
+                "Value": -1.5,
+                "AbsoluteValue": true,
+                "SkillName": ""
+            },
+            {
+                "BuffType": "SkillRate",
+                "Chance": 1,
+                "Delay": 62,
+                "Duration": 120,
+                "Value": -30,
+                "AbsoluteValue": true,
+                "SkillName": "Strength"
+            }
+        ]
+    }
+}
