@@ -1,0 +1,375 @@
+{
+    //for testing, making army bandages a medkit
+    "5751a25924597722c463c472":
+    {
+        "aseptic_bandage": { //aseptic
+
+            //item that will fill the slot by default
+            standard_issue_item: "544fb25a4bdc2dfb738b4567",
+
+            //additional items that will fit into slot
+            additional_accepted_items: [
+            "5751a25924597722c463c472" //army bandage
+            ],
+
+            //percent chance for each item to be present when found on bots
+            slot_filled_chance_bot: 65,
+
+            //percent chance for each item to be present when found in world (loose loot and static loot)
+            slot_filled_chance_world: 80,
+        },
+        
+        "analgin": {
+
+            standard_issue_item: "544fb37f4bdc2dee738b4567",
+
+            additional_accepted_items: [
+            "590c695186f7741e566b64a2", //augmentin
+            "5af0548586f7743a532b7e99", //ibuprofen
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },
+
+        "AI-2": {
+
+            standard_issue_item: "5755356824597772cb798962",
+
+            additional_accepted_items: [
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },  
+    },
+
+    //Car
+    "590c661e86f7741e566b646a": 
+    {
+        "aseptic_bandage": { //aseptic
+
+            //set to a number higher than 1 to duplicate this slot
+            this_slot_count: 3,
+            
+            //item that will fill the slot by default
+            //if empty, this slot has no standard issue item 
+            standard_issue_item: "544fb25a4bdc2dfb738b4567",
+
+            //additional items that will fit into slot
+            additional_accepted_items: [
+            "5751a25924597722c463c472" //army bandage
+            ],
+
+            //percent chance for standard issue item to be present when found on bots
+            slot_filled_chance_bot: 65,
+
+            //percent chance for standard issue item to be present when found in world (loose loot and static loot)
+            slot_filled_chance_world: 80,
+        },
+        
+        "analgin": {
+
+            standard_issue_item: "544fb37f4bdc2dee738b4567",
+
+            additional_accepted_items: [
+            "590c695186f7741e566b64a2", //augmentin
+            "5af0548586f7743a532b7e99", //ibuprofen
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },
+
+        "AI-2": {
+
+            standard_issue_item: "5755356824597772cb798962",
+
+            additional_accepted_items: [
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },  
+    },
+
+    "544fb45d4bdc2dee738b4568":
+    {
+        "aseptic_bandage": { //aseptic
+
+            //item that will fill the slot by default
+            standard_issue_item: "544fb25a4bdc2dfb738b4567",
+
+            //additional items that will fit into slot
+            additional_accepted_items: [
+            "5751a25924597722c463c472" //army bandage
+            ],
+
+            //percent chance for each item to be present when found on bots
+            slot_filled_chance_bot: 65,
+
+            //percent chance for each item to be present when found in world (loose loot and static loot)
+            slot_filled_chance_world: 80,
+        },
+        
+        "analgin": {
+
+            standard_issue_item: "544fb37f4bdc2dee738b4567",
+
+            additional_accepted_items: [
+            "590c695186f7741e566b64a2", //augmentin
+            "5af0548586f7743a532b7e99", //ibuprofen
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },
+
+        "AI-2": {
+
+            standard_issue_item: "5755356824597772cb798962",
+
+            additional_accepted_items: [
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },  
+    },
+
+    "590c678286f77426c9660122":
+    {
+        "aseptic_bandage": { //aseptic
+
+            //item that will fill the slot by default
+            standard_issue_item: "544fb25a4bdc2dfb738b4567",
+
+            //additional items that will fit into slot
+            additional_accepted_items: [
+            "5751a25924597722c463c472" //army bandage
+            ],
+
+            //percent chance for each item to be present when found on bots
+            slot_filled_chance_bot: 65,
+
+            //percent chance for each item to be present when found in world (loose loot and static loot)
+            slot_filled_chance_world: 80,
+        },
+        
+        "analgin": {
+
+            standard_issue_item: "544fb37f4bdc2dee738b4567",
+
+            additional_accepted_items: [
+            "590c695186f7741e566b64a2", //augmentin
+            "5af0548586f7743a532b7e99", //ibuprofen
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },
+
+        "AI-2": {
+
+            standard_issue_item: "5755356824597772cb798962",
+
+            additional_accepted_items: [
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },  
+    },
+
+    "60098ad7c2240c0fe85c570a":
+    {
+        "aseptic_bandage": { //aseptic
+
+            //item that will fill the slot by default
+            standard_issue_item: "544fb25a4bdc2dfb738b4567",
+
+            //additional items that will fit into slot
+            additional_accepted_items: [
+            "5751a25924597722c463c472" //army bandage
+            ],
+
+            //percent chance for each item to be present when found on bots
+            slot_filled_chance_bot: 65,
+
+            //percent chance for each item to be present when found in world (loose loot and static loot)
+            slot_filled_chance_world: 80,
+        },
+        
+        "analgin": {
+
+            standard_issue_item: "544fb37f4bdc2dee738b4567",
+
+            additional_accepted_items: [
+            "590c695186f7741e566b64a2", //augmentin
+            "5af0548586f7743a532b7e99", //ibuprofen
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },
+
+        "AI-2": {
+
+            standard_issue_item: "5755356824597772cb798962",
+
+            additional_accepted_items: [
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },  
+    },
+
+    "590c657e86f77412b013051d":
+    {
+        "aseptic_bandage": { //aseptic
+
+            //item that will fill the slot by default
+            standard_issue_item: "544fb25a4bdc2dfb738b4567",
+
+            //additional items that will fit into slot
+            additional_accepted_items: [
+            "5751a25924597722c463c472" //army bandage
+            ],
+
+            //percent chance for each item to be present when found on bots
+            slot_filled_chance_bot: 65,
+
+            //percent chance for each item to be present when found in world (loose loot and static loot)
+            slot_filled_chance_world: 80,
+        },
+        
+        "analgin": {
+
+            standard_issue_item: "544fb37f4bdc2dee738b4567",
+
+            additional_accepted_items: [
+            "590c695186f7741e566b64a2", //augmentin
+            "5af0548586f7743a532b7e99", //ibuprofen
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },
+
+        "AI-2": {
+
+            standard_issue_item: "5755356824597772cb798962",
+
+            additional_accepted_items: [
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },  
+    },
+
+    "5d02778e86f774203e7dedbe":
+    {
+        "aseptic_bandage": { //aseptic
+
+            //item that will fill the slot by default
+            standard_issue_item: "544fb25a4bdc2dfb738b4567",
+
+            //additional items that will fit into slot
+            additional_accepted_items: [
+            "5751a25924597722c463c472" //army bandage
+            ],
+
+            //percent chance for each item to be present when found on bots
+            slot_filled_chance_bot: 65,
+
+            //percent chance for each item to be present when found in world (loose loot and static loot)
+            slot_filled_chance_world: 80,
+        },
+        
+        "analgin": {
+
+            standard_issue_item: "544fb37f4bdc2dee738b4567",
+
+            additional_accepted_items: [
+            "590c695186f7741e566b64a2", //augmentin
+            "5af0548586f7743a532b7e99", //ibuprofen
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },
+
+        "AI-2": {
+
+            standard_issue_item: "5755356824597772cb798962",
+
+            additional_accepted_items: [
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },  
+    },
+
+    "5d02797c86f774203f38e30a":
+    {
+        "aseptic_bandage": { //aseptic
+
+            //item that will fill the slot by default
+            standard_issue_item: "544fb25a4bdc2dfb738b4567",
+
+            //additional items that will fit into slot
+            additional_accepted_items: [
+            "5751a25924597722c463c472" //army bandage
+            ],
+
+            //percent chance for each item to be present when found on bots
+            slot_filled_chance_bot: 65,
+
+            //percent chance for each item to be present when found in world (loose loot and static loot)
+            slot_filled_chance_world: 80,
+        },
+        
+        "analgin": {
+
+            standard_issue_item: "544fb37f4bdc2dee738b4567",
+
+            additional_accepted_items: [
+            "590c695186f7741e566b64a2", //augmentin
+            "5af0548586f7743a532b7e99", //ibuprofen
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },
+
+        "AI-2": {
+
+            standard_issue_item: "5755356824597772cb798962",
+
+            additional_accepted_items: [
+            ],
+
+            slot_filled_chance_bot: 65,
+
+            slot_filled_chance_world: 80,
+        },  
+    },
+}
