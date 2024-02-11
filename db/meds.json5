@@ -8,26 +8,7 @@
             "StackMaxSize": 1,
             "StimulatorBuffs": "buffs_grizzly_jmo",
             "effects_health": {},
-            "effects_damage": {
-                "LightBleeding": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 1
-                },
-                "HeavyBleeding": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 3
-                },
-                "Fracture": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 6
-                }
-            }
+            "effects_damage": {}
         },
         "afak": {
             "item_id": "60098ad7c2240c0fe85c570a",
@@ -37,20 +18,7 @@
             "StackMaxSize": 1,
             "StimulatorBuffs": "buffs_afak_jmo",
             "effects_health": {},
-            "effects_damage": {
-                "LightBleeding": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 1
-                },
-                "HeavyBleeding": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 3
-                }
-            }
+            "effects_damage": {}
         },
         "car_medkit": {
             "item_id": "590c661e86f7741e566b646a",
@@ -60,14 +28,7 @@
             "StackMaxSize": 1,
             "StimulatorBuffs": "buffs_car_jmo",
             "effects_health": {},
-            "effects_damage": {
-                "LightBleeding": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 0
-                }
-            }
+            "effects_damage": {}
         },
         "ifak": {
             "item_id": "590c678286f77426c9660122",
@@ -77,20 +38,7 @@
             "StackMaxSize": 1,
             "StimulatorBuffs": "buffs_ifak_jmo",
             "effects_health": {},
-            "effects_damage": {
-                "LightBleeding": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 1
-                },
-                "HeavyBleeding": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 3
-                }
-            }
+            "effects_damage": {}
         },
         "ai_2": {
             "item_id": "5755356824597772cb798962",
@@ -100,13 +48,7 @@
             "StackMaxSize": 1,
             "StimulatorBuffs": "buffs_ai_2_jmo",
             "effects_health": {},
-            "effects_damage": {
-                "Pain": {
-                    "delay": 10,
-                    "duration": 45,
-                    "fadeOut": 10
-                }
-            }
+            "effects_damage": {}
         },
         "salewa": {
             "item_id": "544fb45d4bdc2dee738b4568",
@@ -116,20 +58,7 @@
             "StackMaxSize": 1,
             "StimulatorBuffs": "buffs_salewa_jmo",
             "effects_health": {},
-            "effects_damage": {
-                "LightBleeding": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 1
-                },
-                "HeavyBleeding": {
-                    "delay": 0,
-                    "duration": 0,
-                    "fadeOut": 0,
-                    "cost": 3
-                }
-            }
+            "effects_damage": {}
         }    
     },
 
