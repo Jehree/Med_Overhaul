@@ -25,6 +25,8 @@ import { VFS } from "@spt-aki/utils/VFS"
 import {BotGeneratorHelper} from "@spt-aki/helpers/BotGeneratorHelper"
 import { HashUtil } from "@spt-aki/utils/HashUtil"
 import { ITrader } from "@spt-aki/models/eft/common/tables/ITrader"
+import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor"
+import { IGlobals } from "@spt-aki/models/eft/common/IGlobals"
 
 export enum InitStage {
     PRE_AKI_LOAD,
@@ -34,6 +36,8 @@ export enum InitStage {
 
 export class InstanceManager
 {
+    public modName: string = "Jehree's Med Overhaul"
+
     //useful paths
     public modPath: string = path.normalize(path.join(__dirname, ".."))
     public profilePath: string = path.normalize(path.join(__dirname, "..", "..", "..", "profiles"))
@@ -49,13 +53,14 @@ export class InstanceManager
         ragman: "5ac3b934156ae10c4430e83c",
         fence: "579dc571d53a0658a154fbec"       
     }
+    
     public currencyIdsByName:CurrencyIdsByName = {
         RUB: "5449016a4bdc2d6f028b456f",
         EUR: "569668774bdc2da2298b4568",
         USD: "5696686a4bdc2da3298b456a"
     }
 
-    //initialized at preAkiLoadMod
+    //initialized at preAkiLoad
     public container: DependencyContainer
     public preAkiModLoader: PreAkiModLoader
     public imageRouter: ImageRouter
@@ -67,8 +72,9 @@ export class InstanceManager
     public vfs: VFS
     public hashUtil: HashUtil
 
-    //initialized at postDBLoadMod
+    //initialized at postDBLoad
     public dbTables: IDatabaseTables
+    public dbGlobals: IGlobals
     public dbItems: Record<string, ITemplateItem>
     public dbQuests: Record<string, IQuest>
     public dbTraders: Record<string, ITrader>
@@ -81,7 +87,7 @@ export class InstanceManager
     public botGeneratorHelper: BotGeneratorHelper
 
 
-    public init(container: DependencyContainer, initStage:InitStage): void
+    init(container: DependencyContainer, initStage:InitStage): void
     {
         if (initStage === InitStage.PRE_AKI_LOAD || initStage === InitStage.ALL){
             this.container = container
@@ -98,6 +104,7 @@ export class InstanceManager
 
         if (initStage === InitStage.POST_DB_LOAD || initStage === InitStage.ALL){
             this.dbTables = container.resolve<DatabaseServer>("DatabaseServer").getTables()
+            this.dbGlobals = this.dbTables.globals
             this.dbItems = this.dbTables.templates.items
             this.dbQuests = this.dbTables.templates.quests
             this.dbTraders = this.dbTables.traders
@@ -112,16 +119,29 @@ export class InstanceManager
     }
 
 
-    public registerStaticRoute(routeURL:string, routeName:string, callable:CallableFunction, container:DependencyContainer, outputModified:boolean = false): void 
+    registerStaticRoute
+    (
+        routeURL:string,
+        routeName:string,
+        callable:CallableFunction,
+        boundClass:any = undefined,
+        outputModified:boolean = false
+    ): void 
     {
+
+        if (boundClass){
+            callable = callable.bind(boundClass)
+        }
+
         this.staticRouter.registerStaticRouter(
             routeName,
             [{
                 url: routeURL,
                 action: (url, info, sessionId, output) => {
                     const _inst = new InstanceManager()
-                    _inst.init(container, InitStage.ALL)
+                    _inst.init(this.container, InitStage.ALL)
                     
+                    //url:string, info:any, sessionId:string, output:string, _inst:InstanceManager
                     const modifiedOutput = callable(url, info, sessionId, output, _inst)
 
                     if (outputModified){
@@ -136,9 +156,20 @@ export class InstanceManager
     }
 
 
-    public getClassBoundCallable(boundClassInstance:any, callable:CallableFunction):CallableFunction
+    log(logText:string, logColor:LogTextColor = LogTextColor.WHITE, dontLogModName:boolean = false):void
     {
-        return callable.bind(boundClassInstance)
+        switch (dontLogModName){
+
+            case true:{
+                this.logger.log(logText, logColor)
+                break
+            }
+
+            case false:{
+                this.logger.log(`[${this.modName}]: ${logText}`, logColor)
+                break
+            }
+        }
     }
 }
 

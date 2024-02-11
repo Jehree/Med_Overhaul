@@ -1,3 +1,21 @@
 {
-	myProperty: "i love json5"
+	healthrate_multiplier: 100,
+    overhaul_medkits: true,
+    overhaul_bleed_correction: true,
+    overhaul_splints: true,
+    overhaul_surgery_kits: true,
+    overhaul_drugs: true,
+    overhaul_stims: true,
+
+    disable_softskills: true,
+    softskills_to_disable: {
+        Health: 0,
+        Immunity: 0,
+        Metabolism: 0,
+        Vitality: 0,
+        StressResistance: 0,
+        FieldMedicine: 0,
+        FirstAid: 0,
+        Surgery: 0
+    }
 }

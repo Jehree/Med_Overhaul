@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/brace-style */
 import { ILocaleBase } from "@spt-aki/models/spt/server/ILocaleBase";
 import * as fs from "fs";
+import * as path from "path";
 import JSON5 from "json5"
 import { BotGeneratorHelper } from "@spt-aki/helpers/BotGeneratorHelper";
 import { HashUtil } from "@spt-aki/utils/HashUtil";
@@ -9,11 +10,18 @@ import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 
 export class JehreeUtilities 
 {
-    static readJsonFile(path:string, json5?:boolean):any
+    static readJsonFile(rawPath:string, json5?:boolean, useRawPath:boolean = false):any
     {
+        let filePath:string
+        if (useRawPath){
+            filePath = rawPath
+        } else {
+            filePath = path.resolve(__dirname, rawPath)
+        }
+
         try
         {
-            const file = fs.readFileSync(path, "utf8")
+            const file = fs.readFileSync(filePath, "utf8")
 
             if (json5) return JSON5.parse(file)
     

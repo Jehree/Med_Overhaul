@@ -1,3 +1,5 @@
 dist/*
 src/*.js
 src/*.js.map
+src/custom_types/*.js
+src/custom_types/*.js.map

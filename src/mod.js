@@ -1,38 +1,33 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const path_1 = __importDefault(require("path"));
 const instance_manager_1 = require("./instance_manager");
-const bot_edits_1 = require("./bot_edits");
-const item_db_edits_1 = require("./item_db_edits");
-const trader_edits_1 = require("./trader_edits");
 const jehree_utils_1 = require("./jehree_utils");
+const med_effects_edits_1 = require("./med_effects_edits");
+const disable_softskills_1 = require("./disable_softskills");
 class Mod {
-    modName = "Jehree's Med Overhaul";
     _inst = new instance_manager_1.InstanceManager;
-    _botEdits = new bot_edits_1.BotEdits;
-    _itemDBEdits = new item_db_edits_1.ItemDBEdits;
-    _traderEdits = new trader_edits_1.TraderEdits;
-    initInstanceManagers(instanceManager) {
-        this._itemDBEdits.initInstanceManager(instanceManager);
-        this._traderEdits.initInstanceManager(instanceManager);
+    _medEffectsEdits = new med_effects_edits_1.MedEffectsEdits;
+    _disableSoftSkills = new disable_softskills_1.DisableSoftskills;
+    initInstanceManagers() {
+        this._medEffectsEdits.initInstanceManager(this._inst);
+        this._disableSoftSkills.initInstanceManager(this._inst);
     }
     preAkiLoad(container) {
         this._inst.init(container, instance_manager_1.InitStage.PRE_AKI_LOAD);
-        this.initInstanceManagers(this._inst);
-        //make sure to bind the class instance to the callable so 'this' is defined (thanks Drakia!)
-        this._inst.registerStaticRoute("/client/game/bot/generate", "On_Bot_Gen_Med_Overhaul", this._inst.getClassBoundCallable(this._botEdits, this._botEdits.onBotGenerated), container, true);
+        this.initInstanceManagers();
+        const config = jehree_utils_1.JehreeUtilities.readJsonFile("../config/config.json5", true);
+        if (config.disable_softskills) {
+            this._disableSoftSkills.registerSoftskillDisableRoutes();
+        }
     }
     postDBLoad(container) {
         this._inst.init(container, instance_manager_1.InitStage.POST_DB_LOAD);
-        this.initInstanceManagers(this._inst);
-        const medkitsConfig = jehree_utils_1.JehreeUtilities.readJsonFile(path_1.default.resolve(__dirname, "../db/medkits.json5"), true);
-        this._botEdits.copyBotMedItems(this._inst);
-        this._itemDBEdits.changeMedKitsToSlotContainers(medkitsConfig);
-        this._traderEdits.addMedkitContentsToTraderAssorts(medkitsConfig);
-        this._traderEdits.addMedkitContentsToQuests(medkitsConfig);
+        this.initInstanceManagers();
+        const config = jehree_utils_1.JehreeUtilities.readJsonFile("../config/config.json5", true);
+        const medsConfig = jehree_utils_1.JehreeUtilities.readJsonFile("../db/meds.json5", true);
+        const buffsConfig = jehree_utils_1.JehreeUtilities.readJsonFile("../db/stimulator_buffs.json5", true);
+        this._medEffectsEdits.pushCustomStimulatorBuffs(buffsConfig, config.healthrate_multiplier, this._inst.dbGlobals);
+        this._medEffectsEdits.updateDatabaseMeds(config, medsConfig);
     }
 }
 module.exports = { mod: new Mod() };
