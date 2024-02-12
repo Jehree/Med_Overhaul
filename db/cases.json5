@@ -1,0 +1,50 @@
+{
+    custom_cases:[
+        {
+            tpl: "car_medkit_JMO_case",
+
+            name: "Car First Aid Kit",
+            short_name: "Car",
+            description: "A car first aid kit used to hold medical supplies",
+
+            prefab_path: "assets/content/weapons/usable_items/item_automedkit/item_automedkit_loot.bundle",
+            weight: 1,
+            height: 1,
+            width: 2,
+
+            flea_value: 15000,
+
+
+            grid_cells:
+            [
+                {
+                    cell_names: ["1", "2"], //add multiple names to duplicate this cell
+
+                    cell_size_h: 1,
+                    cell_size_v: 1,
+
+                    included_filter:["54009119af1c881c07000029"],
+                    excluded_filter:[],
+                },
+                {
+                    cell_names: ["3"],
+
+                    cell_size_h: 1,
+                    cell_size_v: 3,
+
+                    included_filter:["54009119af1c881c07000029"],
+                    excluded_filter:[],
+                },
+                {
+                    cell_names: ["4", "5"], //add multiple names to duplicate this cell
+
+                    cell_size_h: 1,
+                    cell_size_v: 1,
+
+                    included_filter:["54009119af1c881c07000029"],
+                    excluded_filter:[],
+                }
+            ]
+        },
+    ]
+}

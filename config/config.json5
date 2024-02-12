@@ -1,5 +1,5 @@
 {
-	healthrate_multiplier: 100,
+	healthrate_multiplier: 1,
     overhaul_medkits: true,
     overhaul_bleed_correction: true,
     overhaul_splints: true,

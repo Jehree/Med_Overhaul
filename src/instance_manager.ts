@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 //import * as fs from "fs"
 import * as path from "path"
-
 import { ILogger } from "@spt-aki/models/spt/utils/ILogger"
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer"
 import { IDatabaseTables } from "@spt-aki/models/spt/server/IDatabaseTables"
@@ -27,6 +26,7 @@ import { HashUtil } from "@spt-aki/utils/HashUtil"
 import { ITrader } from "@spt-aki/models/eft/common/tables/ITrader"
 import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor"
 import { IGlobals } from "@spt-aki/models/eft/common/IGlobals"
+import { IHandbookBase } from "@spt-aki/models/eft/common/tables/IHandbookBase"
 
 export enum InitStage {
     PRE_AKI_LOAD,
@@ -44,20 +44,20 @@ export class InstanceManager
     public modsFolderPath: string = path.normalize(path.join(__dirname, "..", ".."))
 
     public traderIdsByName:TraderIdsByName = {
-        mechanic: "5a7c2eca46aef81a7ca2145d",
-        skier: "58330581ace78e27b8b10cee",
-        peacekeeper: "5935c25fb3acc3127c3d8cd9",
-        therapist: "54cb57776803fa99248b456e",
-        prapor: "54cb50c76803fa8b248b4571",
-        jaeger: "5c0647fdd443bc2504c2d371",
-        ragman: "5ac3b934156ae10c4430e83c",
-        fence: "579dc571d53a0658a154fbec"       
+        mechanic: TraderId.MECHANIC,
+        skier: TraderId.SKIER,
+        peacekeeper: TraderId.PEACEKEEPER,
+        therapist: TraderId.THERAPIST,
+        prapor: TraderId.PRAPOR,
+        jaeger: TraderId.JAEGER,
+        ragman: TraderId.RAGMAN,
+        fence: TraderId.FENCE  
     }
     
     public currencyIdsByName:CurrencyIdsByName = {
-        RUB: "5449016a4bdc2d6f028b456f",
-        EUR: "569668774bdc2da2298b4568",
-        USD: "5696686a4bdc2da3298b456a"
+        rub: CurrencyId.RUB,
+        eur: CurrencyId.EUR,
+        usd: CurrencyId.USD
     }
 
     //initialized at preAkiLoad
@@ -79,6 +79,7 @@ export class InstanceManager
     public dbQuests: Record<string, IQuest>
     public dbTraders: Record<string, ITrader>
     public dbLocales: ILocaleBase
+    public dbHandbook: IHandbookBase
     public customItem: CustomItemService
     public jsonUtil: JsonUtil
     public profileHelper: ProfileHelper
@@ -109,6 +110,7 @@ export class InstanceManager
             this.dbQuests = this.dbTables.templates.quests
             this.dbTraders = this.dbTables.traders
             this.dbLocales = this.dbTables.locales
+            this.dbHandbook = this.dbTables.templates.handbook
             this.customItem = container.resolve<CustomItemService>("CustomItemService")
             this.jsonUtil = container.resolve<JsonUtil>("JsonUtil")
             this.profileHelper = container.resolve<ProfileHelper>("ProfileHelper")
@@ -173,6 +175,23 @@ export class InstanceManager
     }
 }
 
+export enum TraderId {
+    MECHANIC = "5a7c2eca46aef81a7ca2145d",
+    SKIER = "58330581ace78e27b8b10cee",
+    PEACEKEEPER = "5935c25fb3acc3127c3d8cd9",
+    THERAPIST = "54cb57776803fa99248b456e",
+    PRAPOR = "54cb50c76803fa8b248b4571",
+    JAEGER = "5c0647fdd443bc2504c2d371",
+    RAGMAN = "5ac3b934156ae10c4430e83c",
+    FENCE = "579dc571d53a0658a154fbec" 
+}
+
+export enum CurrencyId  {
+    RUB = "5449016a4bdc2d6f028b456f",
+    EUR = "569668774bdc2da2298b4568",
+    USD = "5696686a4bdc2da3298b456a"
+}
+
 export type TraderIdsByName = {
     mechanic: "5a7c2eca46aef81a7ca2145d",
     skier: "58330581ace78e27b8b10cee",
@@ -185,7 +204,7 @@ export type TraderIdsByName = {
 }
 
 export type CurrencyIdsByName = {
-    RUB: "5449016a4bdc2d6f028b456f",
-    EUR: "569668774bdc2da2298b4568",
-    USD: "5696686a4bdc2da3298b456a"
+    rub: "5449016a4bdc2d6f028b456f",
+    eur: "569668774bdc2da2298b4568",
+    usd: "5696686a4bdc2da3298b456a"
 }

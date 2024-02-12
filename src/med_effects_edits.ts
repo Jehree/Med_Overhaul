@@ -22,37 +22,39 @@ export class MedEffectsEdits
 
     updateDatabaseMeds(config:JMOConfig, medsConfig:JMOMedicalConfig): void
     {
+        this._inst.log("Med effects changes loading...", LogTextColor.MAGENTA)
+
         if (config.overhaul_medkits){
             this.updateMedCategory(medsConfig.medkits)
-            this._inst.log("Medkit Overhaul enabled!", LogTextColor.MAGENTA)
+            this._inst.log("Medkit Overhaul enabled!", LogTextColor.YELLOW, true)
         }
 
         if (config.overhaul_bleed_correction){
             this.updateMedCategory(medsConfig.bleed)
-            this._inst.log("Bandage and Tourniquet Overhaul enabled!", LogTextColor.MAGENTA)
+            this._inst.log("Bandage and Tourniquet Overhaul enabled!", LogTextColor.YELLOW, true)
         }
 
         if (config.overhaul_splints){
             this.updateMedCategory(medsConfig.splint)
-            this._inst.log("Splint Overhaul enabled!",  LogTextColor.MAGENTA)
+            this._inst.log("Splint Overhaul enabled!",  LogTextColor.YELLOW, true)
         }
 
         if (config.overhaul_surgery_kits){
             this.updateMedCategory(medsConfig.surgery_kits)
-            this._inst.log("Surgery Kit Overhaul enabled!",  LogTextColor.MAGENTA)
+            this._inst.log("Surgery Kit Overhaul enabled!",  LogTextColor.YELLOW, true)
         }
 
         if (config.overhaul_drugs){
             this.updateMedCategory(medsConfig.drugs)
-            this._inst.log("Drugs Overhaul enabled!",  LogTextColor.MAGENTA)
+            this._inst.log("Drugs Overhaul enabled!",  LogTextColor.YELLOW, true)
         }
 
         if (config.overhaul_stims){
             this.updateMedCategory(medsConfig.stims)
-            this._inst.log("Stims Overhaul enabled!",  LogTextColor.MAGENTA)
+            this._inst.log("Stims Overhaul enabled!",  LogTextColor.YELLOW, true)
         }
 
-        this._inst.log("fully loaded!", LogTextColor.MAGENTA)
+        this._inst.log("Med effects changes loaded!", LogTextColor.MAGENTA)
     }
 
 
