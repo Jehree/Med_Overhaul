@@ -33,13 +33,13 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
     private casesConfig:JMOCaseConfig
     private barterConfig:JMOBarterConfig
 
-    initInstanceManagers()
+    initInstances()
     {
-        this._medEffectsEdits.initInstanceManager(this._inst)
-        this._disableSoftSkills.initInstanceManager(this._inst)
-        this._customCases.initInstanceManager(this._inst)
-        this._barterEdits.initInstanceManager(this._inst)
-        this._unpackableMeds.initInstanceManager(this._inst)
+        this._medEffectsEdits.init(this._inst)
+        this._disableSoftSkills.init(this._inst)
+        this._customCases.init(this._inst)
+        this._barterEdits.init(this._inst)
+        this._unpackableMeds.init(this._inst, this.casesConfig)
     }
 
 
@@ -56,7 +56,7 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
     preAkiLoad(container: DependencyContainer): void
     {
         this._inst.init(container, InitStage.PRE_AKI_LOAD)
-        this.initInstanceManagers()
+        this.initInstances()
         this.initConfigs()
         this._inst.log("Pre AKI Loading...", LogTextColor.MAGENTA)
 
@@ -74,7 +74,7 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
     postDBLoad(container: DependencyContainer): void
     {
         this._inst.init(container, InitStage.POST_DB_LOAD)
-        this.initInstanceManagers()
+        this.initInstances()
         this._inst.log("Post DB Loading...", LogTextColor.MAGENTA)
 
         this._medEffectsEdits.pushCustomStimulatorBuffs(this.buffsConfig, this.config.healthrate_multiplier, this._inst.dbGlobals)

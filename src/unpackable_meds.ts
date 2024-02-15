@@ -11,7 +11,6 @@ import { EventOutputHolder } from "@spt-aki/routers/EventOutputHolder";
 import { DependencyContainer } from "tsyringe";
 import { InventoryCallbacks } from "@spt-aki/callbacks/InventoryCallbacks";
 import { JMOCase, JMOCaseConfig } from "./custom_types/custom_case_types";
-import { JehreeUtilities } from "./jehree_utils";
 import { InstanceManager } from "./instance_manager";
 import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor";
 
@@ -26,26 +25,20 @@ export class UnpackableMeds
     private eventOutputHolder:EventOutputHolder
     private casesConfig:JMOCaseConfig
 
-    init():void
+
+    init(instanceManager:InstanceManager, casesConfig:JMOCaseConfig): void
     {
+        this._inst = instanceManager
         this.itemHelper = this._inst.itemHelper
         this.inventoryHelper = this._inst.inventoryHelper
         this.lootGenerator = this._inst.lootGenerator
         this.eventOutputHolder = this._inst.eventOutputHolder
-        this.casesConfig = JehreeUtilities.readJsonFile("../db/cases.json5", true) as JMOCaseConfig
-    }
-
-
-    initInstanceManager(instanceManager:InstanceManager): void
-    {
-        this._inst = instanceManager
+        this.casesConfig = casesConfig
     }
 
 
     replaceOpenRandomLootContainerMethod(container:DependencyContainer):void
     {
-        this.init()
-
         container.afterResolution("InventoryCallbacks", (_t, result: InventoryCallbacks) =>
         {
             result.openRandomLootContainer = (

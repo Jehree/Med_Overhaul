@@ -9,7 +9,7 @@ export class BarterEdits
     private _inst:InstanceManager = new InstanceManager
 
 
-    initInstanceManager(instanceManager:InstanceManager): void
+    init(instanceManager:InstanceManager): void
     {
         this._inst = instanceManager
     }

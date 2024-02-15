@@ -13,7 +13,7 @@ export class DisableSoftskills
 {
     private _inst:InstanceManager
 
-    initInstanceManager(instanceManager:InstanceManager): void
+    init(instanceManager:InstanceManager): void
     {
         this._inst = instanceManager
     }
