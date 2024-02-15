@@ -17,7 +17,7 @@ import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor";
 
 
 
-export class RandomLootContainerEdits
+export class UnpackableMeds
 {
     private _inst:InstanceManager
     private itemHelper:ItemHelper

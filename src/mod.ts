@@ -14,7 +14,7 @@ import { JMOCaseConfig } from "./custom_types/custom_case_types";
 import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor";
 import { BarterEdits } from "./barter_edits";
 import { JMOBarterConfig } from "./custom_types/barter_types";
-import { RandomLootContainerEdits } from "./random_loot_container_edits";
+import { UnpackableMeds } from "./unpackable_meds";
 
 
 
@@ -25,7 +25,7 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
     private _disableSoftSkills:DisableSoftskills = new DisableSoftskills
     private _customCases:CustomCases = new CustomCases
     private _barterEdits:BarterEdits = new BarterEdits
-    private _randomLootContainerEdits:RandomLootContainerEdits = new RandomLootContainerEdits
+    private _unpackableMeds:UnpackableMeds = new UnpackableMeds
 
     initInstanceManagers()
     {
@@ -33,7 +33,7 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
         this._disableSoftSkills.initInstanceManager(this._inst)
         this._customCases.initInstanceManager(this._inst)
         this._barterEdits.initInstanceManager(this._inst)
-        this._randomLootContainerEdits.initInstanceManager(this._inst)
+        this._unpackableMeds.initInstanceManager(this._inst)
     }
 
 
@@ -51,7 +51,7 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
             this._inst.log("disable_softskills enabled", LogTextColor.YELLOW, true)
         }
 
-        this._randomLootContainerEdits.replaceOpenRandomLootContainerMethod(container)
+        this._unpackableMeds.replaceOpenRandomLootContainerMethod(container)
 
         this._inst.log("Pre AKI Loaded!", LogTextColor.MAGENTA)
     }
