@@ -12,6 +12,10 @@ import { DisableSoftskills } from "./disable_softskills";
 import { CustomCases } from "./custom_cases";
 import { JMOCaseConfig } from "./custom_types/custom_case_types";
 import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor";
+import { BarterEdits } from "./barter_edits";
+import { JMOBarterConfig } from "./custom_types/barter_types";
+import { RandomLootContainerEdits } from "./random_loot_container_edits";
+
 
 
 class Mod implements IPostDBLoadMod, IPreAkiLoadMod
@@ -20,12 +24,16 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
     private _medEffectsEdits:MedEffectsEdits = new MedEffectsEdits
     private _disableSoftSkills:DisableSoftskills = new DisableSoftskills
     private _customCases:CustomCases = new CustomCases
+    private _barterEdits:BarterEdits = new BarterEdits
+    private _randomLootContainerEdits:RandomLootContainerEdits = new RandomLootContainerEdits
 
     initInstanceManagers()
     {
         this._medEffectsEdits.initInstanceManager(this._inst)
         this._disableSoftSkills.initInstanceManager(this._inst)
         this._customCases.initInstanceManager(this._inst)
+        this._barterEdits.initInstanceManager(this._inst)
+        this._randomLootContainerEdits.initInstanceManager(this._inst)
     }
 
 
@@ -40,7 +48,10 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
         
         if (config.disable_softskills){
             this._disableSoftSkills.registerSoftskillDisableRoutes()
+            this._inst.log("disable_softskills enabled", LogTextColor.YELLOW, true)
         }
+
+        this._randomLootContainerEdits.replaceOpenRandomLootContainerMethod(container)
 
         this._inst.log("Pre AKI Loaded!", LogTextColor.MAGENTA)
     }
@@ -57,10 +68,12 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
         const medsConfig = JehreeUtilities.readJsonFile("../db/meds.json5", true) as JMOMedicalConfig
         const buffsConfig = JehreeUtilities.readJsonFile("../db/stimulator_buffs.json5", true) as JMOBuffsConfig
         const casesConfig = JehreeUtilities.readJsonFile("../db/cases.json5", true) as JMOCaseConfig
+        const barterConfig = JehreeUtilities.readJsonFile("../db/barters.json5", true) as JMOBarterConfig
 
         this._medEffectsEdits.pushCustomStimulatorBuffs(buffsConfig, config.healthrate_multiplier, this._inst.dbGlobals)
         this._medEffectsEdits.updateDatabaseMeds(config, medsConfig)
         this._customCases.addCustomCasesToItemDatabase(casesConfig)
+        this._barterEdits.addNewBartersToTraderAssorts(barterConfig)
 
         this._inst.log("Post DB Loaded!", LogTextColor.MAGENTA)
     }

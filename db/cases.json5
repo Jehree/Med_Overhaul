@@ -14,6 +14,12 @@
 
             flea_value: 15000,
 
+            standard_issue_items: [
+                {
+                    tpl: "544fb25a4bdc2dfb738b4567", //aseptic bandage
+                    count: 2
+                }
+            ],
 
             grid_cells:
             [

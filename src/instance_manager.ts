@@ -27,6 +27,11 @@ import { ITrader } from "@spt-aki/models/eft/common/tables/ITrader"
 import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor"
 import { IGlobals } from "@spt-aki/models/eft/common/IGlobals"
 import { IHandbookBase } from "@spt-aki/models/eft/common/tables/IHandbookBase"
+import { InventoryHelper } from "@spt-aki/helpers/InventoryHelper"
+import { LootGenerator } from "@spt-aki/generators/LootGenerator"
+import { EventOutputHolder } from "@spt-aki/routers/EventOutputHolder";
+
+
 
 export enum InitStage {
     PRE_AKI_LOAD,
@@ -71,6 +76,9 @@ export class InstanceManager
     public staticRouter: StaticRouterModService
     public vfs: VFS
     public hashUtil: HashUtil
+    public inventoryHelper: InventoryHelper
+    public lootGenerator: LootGenerator
+    public eventOutputHolder: EventOutputHolder
 
     //initialized at postDBLoad
     public dbTables: IDatabaseTables
@@ -101,6 +109,10 @@ export class InstanceManager
             this.staticRouter = container.resolve<StaticRouterModService>("StaticRouterModService")
             this.vfs = container.resolve<VFS>("VFS")
             this.hashUtil = container.resolve<HashUtil>("HashUtil")
+            this.itemHelper = container.resolve<ItemHelper>("ItemHelper")
+            this.inventoryHelper = container.resolve<InventoryHelper>("InventoryHelper")
+            this.lootGenerator = container.resolve<LootGenerator>("LootGenerator")
+            this.eventOutputHolder = container.resolve<EventOutputHolder>("EventOutputHolder")
         }
 
         if (initStage === InitStage.POST_DB_LOAD || initStage === InitStage.ALL){

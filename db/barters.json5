@@ -1,0 +1,26 @@
+[
+    {
+        trader: "therapist",
+        
+        barters: [
+            {
+                barter_id: "car_medkit_LL1",
+                loyalty_level: 1,
+                item_tpl: "car_medkit_JMO_case_packaged",
+                unlimited_stock: true,
+                stock_amount: 100,
+
+                barter_scheme: [
+                    {
+                        count: 69,
+                        _tpl: "rub"
+                    },
+                    {
+                        count: 1,
+                        _tpl: "eur"
+                    }
+                ]
+            }
+        ]
+    }
+]

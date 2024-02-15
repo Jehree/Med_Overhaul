@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/brace-style */
-import { Grid } from "@spt-aki/models/eft/common/tables/ITemplateItem";
+import { Grid, StackSlot } from "@spt-aki/models/eft/common/tables/ITemplateItem";
 import { InstanceManager } from "./instance_manager";
 import { JMOCase, JMOCaseConfig } from "./custom_types/custom_case_types";
 import { JehreeUtilities } from "./jehree_utils";
@@ -23,6 +24,7 @@ export class CustomCases
 
         for (const customCase of casesConfig.custom_cases){
             this.addCaseToItemDatabase(customCase)
+            this.addPackagedCaseToItemDatabase(customCase)
 
             this._inst.log(`${customCase.name} created and added to database!`, LogTextColor.YELLOW, true)
         }
@@ -46,6 +48,54 @@ export class CustomCases
         }
 
         this._inst.log("Custom Cases loaded!", LogTextColor.MAGENTA)
+    }
+
+
+    addPackagedCaseToItemDatabase(customCase:JMOCase): void
+    {
+        const ammoBoxTpl = "634959225289190e5e773b3b"
+        const ammoBoxClone = this._inst.jsonUtil.clone(this._inst.dbItems[ammoBoxTpl])
+        const packagedCaseTpl = customCase.tpl + "_packaged"
+        const packagedCaseName = customCase.name + " packaged (unpack me)"
+        const packagedShortName = customCase.short_name + " pkg"
+        const packagedDescription = "Packaged " + customCase.description
+
+        ammoBoxClone._id = packagedCaseTpl
+        ammoBoxClone._props.Prefab.path = customCase.prefab_path
+        ammoBoxClone._props.Weight = customCase.weight //calculate correct weight later
+        ammoBoxClone._props.Width = customCase.width + 1 //make case larger as a simple reminder to unpack it
+        ammoBoxClone._props.Height = customCase.height + 1
+             
+        ammoBoxClone._name = packagedCaseName
+        JehreeUtilities.localeSetter(packagedCaseTpl + " Name", packagedCaseName, this._inst.dbLocales)
+        ammoBoxClone._props.ShortName = packagedShortName
+        JehreeUtilities.localeSetter(packagedCaseTpl + " ShortName", packagedShortName, this._inst.dbLocales)
+        ammoBoxClone._props.Description = packagedDescription
+        JehreeUtilities.localeSetter(packagedCaseTpl + " Description", packagedDescription, this._inst.dbLocales)
+        this._inst.dbItems[packagedCaseTpl] = ammoBoxClone
+    }
+
+
+    createSlot(parentId:string, count:number, tpl:string):StackSlot
+    {
+        const id = this._inst.hashUtil.generate()
+        return {
+            _id: id,
+            _max_count: count,
+            _name: "cartridges_" + id,
+            _parent: parentId,
+            _props: {
+                filters: [
+                    {
+                        Filter: [
+                            tpl
+                        ]
+                    }
+                ]
+            },
+            upd: {},
+            _proto: "5748538b2459770af276a261"
+        }
     }
 
 
@@ -96,6 +146,8 @@ export class CustomCases
         );
         this._inst.dbItems[customCase.tpl] = siccClone
     }
+
+
 
 
     private createGrid(
