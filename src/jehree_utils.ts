@@ -31,6 +31,8 @@ export class JehreeUtilities
         {
             if (err instanceof Error)
             {
+                console.log(err)
+
                 console.log("!!!-----------------------------------------------------------!!!")
                 console.log("[JEHREE UTILITIES WARNING]: Tried to read json at invalid path: " + path)
                 console.log("!!!-----------------------------------------------------------!!!")

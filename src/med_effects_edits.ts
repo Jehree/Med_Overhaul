@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/brace-style */
 import { IGlobals } from "@spt-aki/models/eft/common/IGlobals";
 import { JMOBuff, JMOBuffsCategory, JMOBuffsConfig } from "./custom_types/stimulator_buffs_types";
-import { JMOMedicalConfig, JMOMedicalItem, JMOMedicalItemCategory } from "./custom_types/medical_item_types";
+import { JMOMedicalConfig, JMOMedicalItem, JMOMedicalItemCategory, JMOMedicalItemLocales } from "./custom_types/medical_item_types";
 import { JMOConfig } from "./custom_types/config_types";
 import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor";
 import { InstanceManager } from "./instance_manager";
+import { JehreeUtilities } from "./jehree_utils";
 
 
 
@@ -58,21 +59,39 @@ export class MedEffectsEdits
     }
 
 
-    updateMedCategory(jmoMeds:JMOMedicalItemCategory): void
+    updateMedCategory(jmoMedCategory:JMOMedicalItemCategory): void
     {
-        for (const med in jmoMeds){
+        for (const med in jmoMedCategory){
 
-            const medItem = jmoMeds[med] as JMOMedicalItem
+            const medItem = jmoMedCategory[med] as JMOMedicalItem
             const medId = medItem.item_id
+            const medItemParamaters = medItem.database_parameters
             const medDbItem = this._inst.dbItems[medId]
 
-            for (const param in medItem){
+            for (const param in medItemParamaters){
 
-                if (param === "item_id") continue;
-
-                medDbItem._props[param] = medItem[param]
-                
+                medDbItem._props[param] = medItemParamaters[param]
             }
+
+            if (medItem.locales){
+                this.updateMedLocales(medItem.locales, medId)
+            }
+        }
+    }
+
+
+    updateMedLocales(itemLocales:JMOMedicalItemLocales, itemTpl:string): void
+    {
+        if (itemLocales.name){
+            JehreeUtilities.localeSetter(itemTpl + " Name", itemLocales.name, this._inst.dbLocales)
+        }
+
+        if (itemLocales.short_name){
+            JehreeUtilities.localeSetter(itemTpl + " ShortName", itemLocales.short_name, this._inst.dbLocales)
+        }
+
+        if (itemLocales.description){
+            JehreeUtilities.localeSetter(itemTpl + " Description", itemLocales.description, this._inst.dbLocales)
         }
     }
 
@@ -92,6 +111,7 @@ export class MedEffectsEdits
             for (const stimulatorBuffKey in buffCategory){
 
                 const stimulatorBuffEffects = buffCategory[stimulatorBuffKey] as JMOBuff[]
+
                 
                 for (const buff of stimulatorBuffEffects){
 

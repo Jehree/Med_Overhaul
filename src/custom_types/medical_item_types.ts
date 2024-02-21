@@ -97,13 +97,28 @@ export type JMOStims =
 export type JMOMedicalItem =
 {
     item_id: string
+    database_parameters: JMOMedicalItemDatabaseParameters
+    locales?: JMOMedicalItemLocales
+}
+
+
+export type JMOMedicalItemLocales =
+{
+    name?: string
+    short_name?: string
+    description?: string
+}
+
+
+export type JMOMedicalItemDatabaseParameters =
+{
     medUseTime: number
     MaxHpResource: number
     hpResourceRate: number
     StackMaxSize: number
     StimulatorBuffs: string
     JMOJMOEffects_health: JMOJMOEffects
-    JMOJMOEffects_damage: JMOJMOEffects
+    JMOJMOEffects_damage: JMOJMOEffects 
 }
 
 

@@ -70,7 +70,7 @@ class Mod implements IPostDBLoadMod, IPreAkiLoadMod
         this._inst.log("Pre AKI Loaded!", LogTextColor.MAGENTA)
     }
 
-
+    
     postDBLoad(container: DependencyContainer): void
     {
         this._inst.init(container, InitStage.POST_DB_LOAD)
