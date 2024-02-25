@@ -63,8 +63,8 @@ export class CustomCases
         ammoBoxClone._id = packagedCaseTpl
         ammoBoxClone._props.Prefab.path = customCase.prefab_path
         ammoBoxClone._props.Weight = customCase.weight //calculate correct weight later
-        ammoBoxClone._props.Width = customCase.width + 1 //make case larger as a simple reminder to unpack it
-        ammoBoxClone._props.Height = customCase.height + 1
+        ammoBoxClone._props.Width = customCase.width
+        ammoBoxClone._props.Height = customCase.height
              
         ammoBoxClone._name = packagedCaseName
         JehreeUtilities.localeSetter(packagedCaseTpl + " Name", packagedCaseName, this._inst.dbLocales)

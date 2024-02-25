@@ -4,7 +4,7 @@
         
         barters: [
             {
-                barter_id: "car_medkit_LL1",
+                barter_id: "car_medkit",
                 loyalty_level: 1,
                 item_tpl: "car_medkit_JMO_case_packaged",
                 unlimited_stock: true,
@@ -14,10 +14,62 @@
                     {
                         count: 69,
                         _tpl: "rub"
-                    },
+                    }
+                ]
+            },
+            {
+                barter_id: "salewa_medkit",
+                loyalty_level: 1,
+                item_tpl: "salewa_medkit_JMO_case_packaged",
+                unlimited_stock: true,
+                stock_amount: 100,
+
+                barter_scheme: [
                     {
-                        count: 1,
-                        _tpl: "eur"
+                        count: 69,
+                        _tpl: "rub"
+                    }
+                ]
+            },
+            {
+                barter_id: "ifak_medkit",
+                loyalty_level: 1,
+                item_tpl: "ifak_medkit_JMO_case_packaged",
+                unlimited_stock: true,
+                stock_amount: 100,
+
+                barter_scheme: [
+                    {
+                        count: 69,
+                        _tpl: "rub"
+                    }
+                ]
+            },
+            {
+                barter_id: "afak_medkit",
+                loyalty_level: 1,
+                item_tpl: "afak_medkit_JMO_case_packaged",
+                unlimited_stock: true,
+                stock_amount: 100,
+
+                barter_scheme: [
+                    {
+                        count: 69,
+                        _tpl: "rub"
+                    }
+                ]
+            },
+            {
+                barter_id: "grizzly_medkit",
+                loyalty_level: 1,
+                item_tpl: "grizzly_medkit_JMO_case_packaged",
+                unlimited_stock: true,
+                stock_amount: 100,
+
+                barter_scheme: [
+                    {
+                        count: 69,
+                        _tpl: "rub"
                     }
                 ]
             }
